@@ -1,7 +1,7 @@
-package conta.sistema.dominio.servico;
+package com.santosystem.domain.servico;
 
-import conta.sistema.dominio.modelo.Conta;
-import conta.sistema.dominio.modelo.NegocioException;
+import com.santosystem.domain.modelo.Conta;
+import com.santosystem.domain.modelo.NegocioException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -37,7 +37,7 @@ class TransferenciaTest {
             trans.processar(null, contaDebito, contaCredito);
             fail("Valor da trasnferência obrigatório");
         } catch (NegocioException e) {
-            assertEquals(e.getMessage(), "Valor da transferência é obrigatório.");
+            assertEquals("Valor da transferência é obrigatório.", e.getMessage());
             System.out.println(e.getMessage());
         }
     }
@@ -55,7 +55,7 @@ class TransferenciaTest {
             trans.processar(vinte, null, contaCredito);
             fail("conta debito obrigatório");
         } catch (NegocioException e) {
-            assertEquals(e.getMessage(), "Conta débito é obrigatório.");
+            assertEquals("Conta débito é obrigatório.", e.getMessage());
             System.out.println(e.getMessage());
         }
     }
@@ -67,7 +67,7 @@ class TransferenciaTest {
             trans.processar(vinte, contaDebito, null);
             fail("conta credito obrigatório");
         } catch (NegocioException e) {
-            assertEquals(e.getMessage(), "Conta crédito é obrigatório.");
+            assertEquals("Conta crédito é obrigatório.", e.getMessage());
             System.out.println(e.getMessage());
         }
     }
@@ -79,10 +79,8 @@ class TransferenciaTest {
     void teste4() {
         try {
             trans.processar(vinte, contaDebito, contaCredito);
-            assertEquals(contaDebito.getSaldo(), cem.subtract(vinte),
-                    "Saldo da conta débito deve bater");
-            assertEquals(contaCredito.getSaldo(), cem.add(vinte),
-                    "Saldo da conta crédito deve bater");
+            assertEquals(contaDebito.getSaldo(), cem.subtract(vinte), "Saldo da conta débito deve bater");
+            assertEquals(contaCredito.getSaldo(), cem.add(vinte), "Saldo da conta crédito deve bater");
         } catch (NegocioException e) {
             fail("Deve transferir com sucesso");
         }

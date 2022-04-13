@@ -1,4 +1,4 @@
-package conta.sistema.dominio.modelo;
+package com.santosystem.domain.modelo;
 
 // Responsável por representar um erro de negócio de sistema.
 public class NegocioException extends RuntimeException {

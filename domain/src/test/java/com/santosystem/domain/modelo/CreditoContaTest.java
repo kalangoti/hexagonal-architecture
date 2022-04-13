@@ -1,4 +1,4 @@
-package conta.sistema.dominio.modelo;
+package com.santosystem.domain.modelo;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -30,7 +30,7 @@ class CreditoContaTest {
             contaValida.creditar(null);
             fail("valor crédito obrigatório");
         } catch (NegocioException e) {
-            assertEquals(e.getMessage(), "Valor crédito é obrigatório.");
+            assertEquals("Valor crédito é obrigatório.", e.getMessage());
             System.out.println(e.getMessage());
         }
     }
@@ -42,7 +42,7 @@ class CreditoContaTest {
             contaValida.creditar(new BigDecimal(-10));
             fail("valor crédito obrigatório");
         } catch (NegocioException e) {
-            assertEquals(e.getMessage(), "Valor crédito é obrigatório.");
+            assertEquals("Valor crédito é obrigatório.", e.getMessage());
             System.out.println(e.getMessage());
         }
     }
@@ -54,7 +54,7 @@ class CreditoContaTest {
             contaValida.creditar(BigDecimal.ZERO);
             fail("valor crédito obrigatório");
         } catch (NegocioException e) {
-            assertEquals(e.getMessage(), "Valor crédito é obrigatório.");
+            assertEquals("Valor crédito é obrigatório.", e.getMessage());
             System.out.println(e.getMessage());
         }
     }

@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.santosystem</groupId>
+    <!-- parent pom -->
+    <parent>
+        <groupId>com.santosystem</groupId>
+        <artifactId>hexagonal-architecture</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <!-- module info -->
+    <groupId>com.santosystem.domain</groupId>
     <artifactId>domain</artifactId>
     <version>1.0.0</version>
+    <packaging>jar</packaging>
+    <name>domain</name>
+    <description>Modulo de dominio</description>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -39,21 +50,21 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>5.2.19.RELEASE</version>
+            <version>5.2.20.RELEASE</version>
         </dependency>
 
         <!-- Spring Transaction -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
-            <version>5.2.19.RELEASE</version>
+            <version>5.2.20.RELEASE</version>
         </dependency>
 
         <!-- Spring Test -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
-            <version>5.2.19.RELEASE</version>
+            <version>5.2.20.RELEASE</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

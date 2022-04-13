@@ -1,4 +1,4 @@
-package conta.sistema.dominio.modelo;
+package com.santosystem.domain.modelo;
 
 // Responsável por centralizar todas as mensagens de validações.
 public class Erro {

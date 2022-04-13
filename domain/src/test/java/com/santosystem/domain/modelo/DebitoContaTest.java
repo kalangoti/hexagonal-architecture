@@ -1,4 +1,4 @@
-package conta.sistema.dominio.modelo;
+package com.santosystem.domain.modelo;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -29,7 +29,7 @@ class DebitoContaTest {
             contaValida.debitar(null);
             fail("valor débito é obrigatório");
         } catch (NegocioException e) {
-            assertEquals(e.getMessage(), "Valor débito é obrigatório.");
+            assertEquals("Valor débito é obrigatório.", e.getMessage());
             System.out.println(e.getMessage());
         }
     }
@@ -41,7 +41,7 @@ class DebitoContaTest {
             contaValida.debitar(new BigDecimal(-10));
             fail("valor débito obrigatório");
         } catch (NegocioException e) {
-            assertEquals(e.getMessage(), "Valor débito é obrigatório.");
+            assertEquals("Valor débito é obrigatório.", e.getMessage());
             System.out.println(e.getMessage());
         }
     }
@@ -53,7 +53,7 @@ class DebitoContaTest {
             contaValida.debitar(BigDecimal.ZERO);
             fail("valor debito obrigatório");
         } catch (NegocioException e) {
-            assertEquals(e.getMessage(), "Valor débito é obrigatório.");
+            assertEquals("Valor débito é obrigatório.", e.getMessage());
             System.out.println(e.getMessage());
         }
     }
@@ -65,7 +65,7 @@ class DebitoContaTest {
             contaValida.debitar(cem.add(BigDecimal.ONE));
             fail("valor débito acima do saldo");
         } catch (NegocioException e) {
-            assertEquals(e.getMessage(), "Saldo insuficiente.");
+            assertEquals("Saldo insuficiente.", e.getMessage());
             System.out.println(e.getMessage());
         }
     }
@@ -77,7 +77,7 @@ class DebitoContaTest {
     void teste5() {
         try {
             contaValida.debitar(cem);
-            assertEquals(contaValida.getSaldo(), BigDecimal.ZERO, "Saldo deve zerar");
+            assertEquals(BigDecimal.ZERO, contaValida.getSaldo(), "Saldo deve zerar");
         } catch (NegocioException e) {
             fail("Deve debitar com sucesso - " + e.getMessage());
         }
