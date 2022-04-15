@@ -1,11 +1,11 @@
-package com.santosystem.domain.servico;
+package conta.sistema.dominio.servico;
 
-import com.santosystem.domain.modelo.Conta;
+import conta.sistema.dominio.modelo.Conta;
 
 import javax.inject.Named;
 import java.math.BigDecimal;
 
-import static com.santosystem.domain.modelo.Erro.obrigatorio;
+import static conta.sistema.dominio.modelo.Erro.obrigatorio;
 import static java.util.Objects.isNull;
 
 // Responsável por representar a entidade transferência e suas regras.

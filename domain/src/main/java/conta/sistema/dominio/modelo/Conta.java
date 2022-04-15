@@ -1,9 +1,9 @@
-package com.santosystem.domain.modelo;
+package conta.sistema.dominio.modelo;
 
 import java.math.BigDecimal;
 
-import static com.santosystem.domain.modelo.Erro.obrigatorio;
-import static com.santosystem.domain.modelo.Erro.saldoInsuficiente;
+import static conta.sistema.dominio.modelo.Erro.obrigatorio;
+import static conta.sistema.dominio.modelo.Erro.saldoInsuficiente;
 import static java.util.Objects.isNull;
 
 // Responsável por representar a entidade conta e suas regras.

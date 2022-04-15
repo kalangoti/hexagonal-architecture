@@ -1,7 +1,8 @@
-package com.santosystem.domain.servico;
+package teste.unidade.dominio.servico;
 
-import com.santosystem.domain.modelo.Conta;
-import com.santosystem.domain.modelo.NegocioException;
+import conta.sistema.dominio.modelo.Conta;
+import conta.sistema.dominio.modelo.NegocioException;
+import conta.sistema.dominio.servico.Transferencia;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -12,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
 @DisplayName("Regra de Transferência")
-class TransferenciaTest {
+public class TesteTransferencia {
 
     // armazena o cem para teste ficar dinamico
     BigDecimal cem = new BigDecimal(100);
@@ -37,7 +38,7 @@ class TransferenciaTest {
             trans.processar(null, contaDebito, contaCredito);
             fail("Valor da trasnferência obrigatório");
         } catch (NegocioException e) {
-            assertEquals("Valor da transferência é obrigatório.", e.getMessage());
+            assertEquals(e.getMessage(), "Valor da transferência é obrigatório.");
             System.out.println(e.getMessage());
         }
     }
@@ -55,7 +56,7 @@ class TransferenciaTest {
             trans.processar(vinte, null, contaCredito);
             fail("conta debito obrigatório");
         } catch (NegocioException e) {
-            assertEquals("Conta débito é obrigatório.", e.getMessage());
+            assertEquals(e.getMessage(), "Conta débito é obrigatório.");
             System.out.println(e.getMessage());
         }
     }
@@ -67,7 +68,7 @@ class TransferenciaTest {
             trans.processar(vinte, contaDebito, null);
             fail("conta credito obrigatório");
         } catch (NegocioException e) {
-            assertEquals("Conta crédito é obrigatório.", e.getMessage());
+            assertEquals(e.getMessage(), "Conta crédito é obrigatório.");
             System.out.println(e.getMessage());
         }
     }
@@ -79,8 +80,10 @@ class TransferenciaTest {
     void teste4() {
         try {
             trans.processar(vinte, contaDebito, contaCredito);
-            assertEquals(contaDebito.getSaldo(), cem.subtract(vinte), "Saldo da conta débito deve bater");
-            assertEquals(contaCredito.getSaldo(), cem.add(vinte), "Saldo da conta crédito deve bater");
+            assertEquals(contaDebito.getSaldo(), cem.subtract(vinte),
+                    "Saldo da conta débito deve bater");
+            assertEquals(contaCredito.getSaldo(), cem.add(vinte),
+                    "Saldo da conta crédito deve bater");
         } catch (NegocioException e) {
             fail("Deve transferir com sucesso");
         }

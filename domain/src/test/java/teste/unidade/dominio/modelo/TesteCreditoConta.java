@@ -1,5 +1,7 @@
-package com.santosystem.domain.modelo;
+package teste.unidade.dominio.modelo;
 
+import conta.sistema.dominio.modelo.Conta;
+import conta.sistema.dominio.modelo.NegocioException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -10,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
 @DisplayName("Regra de Crédito de Conta")
-class CreditoContaTest {
+public class TesteCreditoConta {
 
     // armazena o saldo para teste ficar dinamico
     BigDecimal cem = new BigDecimal(100);
@@ -30,7 +32,7 @@ class CreditoContaTest {
             contaValida.creditar(null);
             fail("valor crédito obrigatório");
         } catch (NegocioException e) {
-            assertEquals("Valor crédito é obrigatório.", e.getMessage());
+            assertEquals(e.getMessage(), "Valor crédito é obrigatório.");
             System.out.println(e.getMessage());
         }
     }
@@ -42,7 +44,7 @@ class CreditoContaTest {
             contaValida.creditar(new BigDecimal(-10));
             fail("valor crédito obrigatório");
         } catch (NegocioException e) {
-            assertEquals("Valor crédito é obrigatório.", e.getMessage());
+            assertEquals(e.getMessage(), "Valor crédito é obrigatório.");
             System.out.println(e.getMessage());
         }
     }
@@ -54,7 +56,7 @@ class CreditoContaTest {
             contaValida.creditar(BigDecimal.ZERO);
             fail("valor crédito obrigatório");
         } catch (NegocioException e) {
-            assertEquals("Valor crédito é obrigatório.", e.getMessage());
+            assertEquals(e.getMessage(), "Valor crédito é obrigatório.");
             System.out.println(e.getMessage());
         }
     }
