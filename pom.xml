@@ -15,5 +15,6 @@
     <!-- sub modules -->
     <modules>
         <module>domain</module>
+        <module>desktop</module>
     </modules>
 </project>

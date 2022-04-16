@@ -12,11 +12,11 @@
     </parent>
 
     <!-- module info -->
-    <groupId>com.santosystem.domain</groupId>
-    <artifactId>domain</artifactId>
+    <groupId>com.santosystem.desktop</groupId>
+    <artifactId>desktop</artifactId>
     <version>1.0.0</version>
-    <name>domain</name>
-    <description>Module domain</description>
+    <name>desktop</name>
+    <description>Module desktop</description>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -25,47 +25,39 @@
     </properties>
 
     <dependencies>
-        <!-- JUnit -->
+        <!--  Conta Sistema  -->
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.8.2</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-runner</artifactId>
-            <version>1.8.2</version>
-            <scope>test</scope>
+            <groupId>com.santosystem.domain</groupId>
+            <artifactId>domain</artifactId>
+            <version>1.0.0</version>
         </dependency>
 
-        <!-- CDI -->
+        <!--  JavaFx  -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>11</version>
+        </dependency>
+
+        <!--  CDI  -->
         <dependency>
             <groupId>javax.enterprise</groupId>
             <artifactId>cdi-api</artifactId>
             <version>2.0</version>
         </dependency>
 
-        <!-- Spring IoC -->
+        <!--  Spring IoC  -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>${org.springframework.version}</version>
         </dependency>
 
-        <!-- Spring Transaction -->
+        <!--  Spring Transactions  -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
             <version>${org.springframework.version}</version>
-        </dependency>
-
-        <!-- Spring Test -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-            <version>${org.springframework.version}</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>
