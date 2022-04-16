@@ -55,13 +55,13 @@ public class TesteAdaptadorTransferencia {
 
     @Test
     @DisplayName("pesquisa conta com número existente")
-    void teste13() {
+    void teste3() {
         try {
             var conta = porta.getConta(contaCredito);
             assertTrue(conta != null, "Conta deve estar preenchida");
             System.out.println(conta);
         } catch (NegocioException e) {
-            fail("Deva carregar uma conta nula.");
+            fail("Deva carregar uma conta existente.");
         }
     }
 
@@ -69,7 +69,7 @@ public class TesteAdaptadorTransferencia {
     // negativos transferencia
 
     @Test
-    @DisplayName("conta crédito como obrigatório")
+    @DisplayName("conta débito como obrigatório")
     void teste4() {
         try {
             porta.transferir(null, contaCredito, cinquenta);
@@ -81,7 +81,7 @@ public class TesteAdaptadorTransferencia {
     }
 
     @Test
-    @DisplayName("conta débito como obrigatório")
+    @DisplayName("conta crédito como obrigatório")
     void teste5() {
         try {
             porta.transferir(contaDebito, null, cinquenta);
@@ -133,7 +133,7 @@ public class TesteAdaptadorTransferencia {
     void teste9() {
         try {
             porta.transferir(contaDebito, contaDebito, cinquenta);
-            fail("Conta crédito e debito deve ser diferentes");
+            fail("Conta débito e crédito devem ser diferentes");
         } catch (NegocioException e) {
             assertEquals(e.getMessage(), "Conta débito e crédito devem ser diferentes.");
             System.out.println(e.getMessage());

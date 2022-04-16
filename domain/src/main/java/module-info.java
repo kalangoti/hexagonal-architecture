@@ -8,9 +8,11 @@ module domain {
     // expondo porta de entrada (driver)
     exports conta.sistema.casouso.porta;
     exports conta.sistema.casouso.imp;
+
     // expondo sistema negocio
     exports conta.sistema.dominio.modelo;
     exports conta.sistema.dominio.servico;
+
     // expondo adptadores de saidas (driven)
     exports conta.sistema.porta;
     exports conta.adaptador;
