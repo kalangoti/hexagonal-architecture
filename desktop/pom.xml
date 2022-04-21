@@ -14,7 +14,6 @@
     <!-- module info -->
     <groupId>com.santosystem.desktop</groupId>
     <artifactId>desktop</artifactId>
-    <version>1.0.0</version>
     <name>desktop</name>
     <description>Module desktop</description>
 
