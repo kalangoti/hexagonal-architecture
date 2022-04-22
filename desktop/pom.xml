@@ -29,6 +29,7 @@
             <groupId>com.santosystem.domain</groupId>
             <artifactId>domain</artifactId>
             <version>1.0.0</version>
+            <scope>compile</scope>
         </dependency>
 
         <!--  JavaFx  -->
