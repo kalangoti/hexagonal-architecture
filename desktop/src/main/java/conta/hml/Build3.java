@@ -1,4 +1,4 @@
-package teste.integracao;
+package conta.hml;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -14,15 +14,24 @@ import javax.sql.DataSource;
 // Responsável por configurar os serviços do spring
 @Configuration
 @EnableTransactionManagement
-@ComponentScan({"conta.servicos.respositorio"})
-public class Config {
+@ComponentScan({
+        // adptadores front-end javafx
+        "conta.tela",
+        "conta.hml",
+        // core do sistema
+        "conta.sistema",
+        // adptadores real
+        "conta.servicos.respositorio"})
+public class Build3 {
+
+    // Build 3 - Adaptador JavaFX -> Sistema <- Adaptadores Real em Homologação
 
     @Bean
     public DataSource dataSource() {
         var builder = new EmbeddedDatabaseBuilder();
         return builder.setType(EmbeddedDatabaseType.HSQL)
                 .addScript("create-db.sql")
-                .addScript("insert-data.sql")
+                .addScript("insert-hml.sql")
                 .build();
     }
 

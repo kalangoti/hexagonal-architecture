@@ -32,6 +32,14 @@
             <scope>compile</scope>
         </dependency>
 
+        <!--  Conta Sistema  -->
+        <dependency>
+            <groupId>com.santosystem.infrastructure</groupId>
+            <artifactId>infrastructure</artifactId>
+            <version>1.0.0</version>
+            <scope>compile</scope>
+        </dependency>
+
         <!--  JavaFx  -->
         <dependency>
             <groupId>org.openjfx</groupId>
