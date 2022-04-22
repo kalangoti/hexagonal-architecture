@@ -32,7 +32,7 @@
             <scope>compile</scope>
         </dependency>
 
-        <!--  Conta Sistema  -->
+        <!--  Conta Servicos  -->
         <dependency>
             <groupId>com.santosystem.infrastructure</groupId>
             <artifactId>infrastructure</artifactId>
