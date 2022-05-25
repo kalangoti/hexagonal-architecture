@@ -23,5 +23,5 @@ java --module-path="C:\projetos\javafx-sdk-11.0.2\lib" --add-modules=javafx.cont
 ### Run on IDE
 `Run -> Edit Configurations` and add these VM options:
 ```sh
---module-path "\path\to\javafx-sdk-17.0.1\lib" --add-modules javafx.controls,javafx.fxml
+--module-path "\path\to\javafx-sdk-11.0.2\lib" --add-modules javafx.controls,javafx.fxml
 ```

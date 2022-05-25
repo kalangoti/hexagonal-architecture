@@ -9,6 +9,8 @@ import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
 
 // Responsável por configurar os serviços do spring
 @Configuration
@@ -27,9 +29,11 @@ public class Build4 {
 
     @Bean
     public DataSource dataSource() {
+        Path path = FileSystems.getDefault().getPath("");
+        String directoryName = path.toAbsolutePath().toString().replace("desktop","");
         var ds = new SimpleDriverDataSource();
         ds.setDriverClass(org.hsqldb.jdbcDriver.class);
-        ds.setUrl("jdbc:hsqldb:file:D:/KTI/WS/hexagonal-architecture-java/db/");
+        ds.setUrl("jdbc:hsqldb:file:" + directoryName + "db/");
         ds.setUsername("SA");
         ds.setPassword("1234");
         return ds;
